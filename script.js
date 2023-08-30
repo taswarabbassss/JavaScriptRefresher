@@ -154,3 +154,6 @@ newArray
 
 const str = `${title} is a book`
 str;
+
+const pagesRange = pages>1000?'Over One Thousand': "Less than One Thousand";
+pagesRange;
