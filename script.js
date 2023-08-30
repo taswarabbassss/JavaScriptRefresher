@@ -158,7 +158,7 @@ const pagesRange =
   pages > 1000 ? "Over One Thousand" : "Less than One Thousand";
 pagesRange;
 
-const countWrong = book.reviews.librarything.ratingsCount || "No data";
+const countWrong = book.reviews.librarything?.ratingsCount || "No data";
 // const countWrong = 0 || "No data";
 const count = 0 ?? "No data";
 
@@ -166,9 +166,9 @@ countWrong;
 count;
 
 function getTotalReviews(book) {
-  const goodReviews = book.reviews.goodreads.reviewsCount;
+  const goodReviews = book.reviews?.goodreads.reviewsCount;
   goodReviews;
-  const librarything = book.reviews.librarything?.reviewsCount ?? 0;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
   librarything;
   return goodReviews + librarything;
 }
