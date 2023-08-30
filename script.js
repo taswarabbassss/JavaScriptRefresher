@@ -151,3 +151,6 @@ rest;
 const newArray = ['helo',...genres];
 newArray
 
+
+const str = `${title} is a book`
+str;
