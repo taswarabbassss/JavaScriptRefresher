@@ -143,17 +143,35 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-const book = getBook(2);
+const book = getBook(3);
 
 book;
-const {title,id, genres, pages, ...rest} = book;
+const { title, id, genres, pages, ...rest } = book;
 rest;
-const newArray = ['helo',...genres];
-newArray
+const newArray = ["helo", ...genres];
+newArray;
 
-
-const str = `${title} is a book`
+const str = `${title} is a book`;
 str;
 
-const pagesRange = pages>1000?'Over One Thousand': "Less than One Thousand";
+const pagesRange =
+  pages > 1000 ? "Over One Thousand" : "Less than One Thousand";
 pagesRange;
+
+const countWrong = book.reviews.librarything.ratingsCount || "No data";
+// const countWrong = 0 || "No data";
+const count = 0 ?? "No data";
+
+countWrong;
+count;
+
+function getTotalReviews(book) {
+  const goodReviews = book.reviews.goodreads.reviewsCount;
+  goodReviews;
+  const librarything = book.reviews.librarything?.reviewsCount ?? 0;
+  librarything;
+  return goodReviews + librarything;
+}
+
+const totalReviews = getTotalReviews(book);
+totalReviews;
